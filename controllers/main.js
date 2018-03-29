@@ -1,7 +1,9 @@
 const ask = require('./');
 
 module.exports = (text) => {
-  if (text.match(/what would martin do/g)) return 'Martin wouldn\'t do that!';
+  if (text.match(/what would martin do/g)) {
+    return ask.whatdo();
+  }
 
   if (text.match(/pattern/g)) {
     return ask.patterns();
