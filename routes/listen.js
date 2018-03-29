@@ -7,9 +7,9 @@ const router = express.Router();
 
 
 router.post('/', (req, res, next) => {
-  console.log('Martin heard something', req.body.event.text);
-  if (req.body.event.text.includes('martin')) {
-    const responseText = JSON.stringify(ask(req.body.event.text));
+  if (req.body.event.text.match(/martin/g)) {
+    console.log('Martin heard something', req.body.event.text);
+    const responseText = ask(req.body.event.text);
     const username = 'AskMartin';
     const channel = 'rewards-prv';
 
