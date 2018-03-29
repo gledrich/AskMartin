@@ -5,7 +5,7 @@ module.exports = () => {
     return Math.floor(Math.random() * (max - min + 1)) + min; // eslint-disable-line
   };
 
-  const ran = getRandom(1, 4);
+  const ran = getRandom(1, 6);
 
   const sw = {
     1: 'When you find you have to add a feature to a program, and the program\'s code is not structured in a convenient way to add the feature, first refactor the program to make it easy to add the feature, then add the feature.',
