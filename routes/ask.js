@@ -1,6 +1,6 @@
 const express = require('express');
 
-const crystalBall = require('../controllers/crystalBall');
+const ask = require('../controllers/main');
 
 const router = express.Router();
 
@@ -8,14 +8,8 @@ const router = express.Router();
 router.post('/', (req, res, next) => {
   const { text } = req.body;
 
-  if (text.includes('crystal')) {
-    return res.json({
-      text: crystalBall(),
-    });
-  }
-
   res.json({
-    text: 'You asked Martin a question.',
+    text: ask(text),
   });
 });
 

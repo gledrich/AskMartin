@@ -5,21 +5,16 @@ module.exports = () => {
     return Math.floor(Math.random() * (max - min + 1)) + min; // eslint-disable-line
   };
 
-  const ran = getRandom(1, 5);
+  const ran = getRandom(1, 4);
 
-  switch (ran) {
-    case 1:
-      return 'Random 1';
-    case 2:
-      return 'Random 2';
-    case 3:
-      return 'Random 3';
-    case 4:
-      return 'Random 4';
-    case 5:
-      return 'Random 5';
-    default:
-      return 'Default';
-  }
+  const sw = {
+    1: 'Follow your code',
+    2: 'Always',
+    3: 'I can\'t decide the future for you',
+    4: 'That\'s a bad one',
+  };
+
+
+  return sw[ran];
 };
 
