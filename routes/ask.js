@@ -1,9 +1,21 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
 
-router.post('/', function(req, res, next) {
+const crystalBall = require('../controllers/crystalBall');
+
+const router = express.Router();
+
+
+router.post('/', (req, res, next) => {
+  const { text } = req.body;
+
+  if (text.includes('crystal')) {
+    return res.json({
+      text: crystalBall(),
+    });
+  }
+
   res.json({
-    text: 'You asked Martin.'
+    text: 'You asked Martin a question.',
   });
 });
 
